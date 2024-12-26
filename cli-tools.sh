@@ -3,8 +3,8 @@
 # /tmp/copr-helper.sh atim starship
 # /tmp/copr-helper.sh sramanujam atuin
 
-dnf5 copr enable atim/starship
-dnf5 copr enable sramanujam/atuin
+dnf5 copr enable atim/starship -y
+dnf5 copr enable sramanujam/atuin -y
 
 PACKAGES=(
   eza
