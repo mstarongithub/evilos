@@ -15,7 +15,7 @@
 # - "base"
 #
 #  "aurora", "bazzite", "bluefin" or "ucore" may also be used but have different suffixes.
-ARG SOURCE_IMAGE="silverblue"
+ARG SOURCE_IMAGE="kinoite"
 
 ## SOURCE_SUFFIX arg should include a hyphen and the appropriate suffix name
 # These examples all work for silverblue/kinoite/sericea/onyx/lazurite/vauxite/base
@@ -49,6 +49,11 @@ FROM ghcr.io/ublue-os/${SOURCE_IMAGE}${SOURCE_SUFFIX}:${SOURCE_TAG}
 ## the following RUN directive does all the things required to run "build.sh" as recommended.
 
 COPY build.sh /tmp/build.sh
+COPY install-docker.sh /tmp/install-docker.sh
+COPY remove-cliwrappers.sh /tmp/remove-cliwrappers.sh
+# COPY copr-helper.sh /tmp/copr-helper.sh
+COPY cli-tools.sh /tmp/cli-tools.sh
+COPY dev.sh /tmp/dev.sh
 
 RUN mkdir -p /var/lib/alternatives && \
     /tmp/build.sh && \
