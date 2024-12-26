@@ -5,6 +5,7 @@
 
 dnf5 copr enable atim/starship -y
 dnf5 copr enable sramanujam/atuin -y
+dnf5 copr enable varlad/zellij -y
 
 PACKAGES=(
   eza
@@ -13,6 +14,8 @@ PACKAGES=(
   starship
   fish
   bat
+  nvim
+  zellij
 )
 
 dnf5 install -y "${PACKAGES[@]}"

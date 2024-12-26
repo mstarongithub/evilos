@@ -55,6 +55,15 @@ COPY remove-cliwrappers.sh /tmp/remove-cliwrappers.sh
 COPY cli-tools.sh /tmp/cli-tools.sh
 COPY dev.sh /tmp/dev.sh
 
+# # Allow Go to pull whatever version is specified in go.mod files
+ENV GOSUMDB="sum.golang.org"
+ENV GOTOOLCHAIN="auto"
+
+# Rust and cargo into separate folder
+ENV CARGO_HOME=/etc/rust/cargo
+ENV RUSTUP_HOME=/etc/rust/rustup
+ENV PATH="/etc/rust/cargo/bin:$PATH"
+
 RUN mkdir -p /var/lib/alternatives && \
     /tmp/build.sh && \
     ostree container commit
