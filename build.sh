@@ -7,4 +7,4 @@ RELEASE="$(rpm -E %fedora)"
 /tmp/remove-cliwrappers.sh
 /tmp/install-docker.sh
 /tmp/cli-tools.sh
-/tmp/dev.sh
+/tmp/langs.sh

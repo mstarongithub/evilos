@@ -51,9 +51,9 @@ FROM ghcr.io/ublue-os/${SOURCE_IMAGE}${SOURCE_SUFFIX}:${SOURCE_TAG}
 COPY build.sh /tmp/build.sh
 COPY install-docker.sh /tmp/install-docker.sh
 COPY remove-cliwrappers.sh /tmp/remove-cliwrappers.sh
-# COPY copr-helper.sh /tmp/copr-helper.sh
+COPY copr-helper.sh /tmp/copr-helper.sh
 COPY cli-tools.sh /tmp/cli-tools.sh
-COPY dev.sh /tmp/dev.sh
+COPY langs.sh /tmp/langs.sh
 
 # # Allow Go to pull whatever version is specified in go.mod files
 ENV GOSUMDB="sum.golang.org"
